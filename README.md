@@ -5,7 +5,7 @@
 <p align="center">Camilo Andrés Galindo Rivera<br>
 Angel Stiven Toro Fuente<br>
 Davived Rayo Silva<br>
-William Alejandro Bermudez Quiroga<br>
+William Alejandro Bermúdez Quiroga<br>
 Santiago Ninco Uribe<br>
 </p>
 <h3 align="center">Ficha 2251585</h3>
