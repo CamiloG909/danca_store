@@ -27,7 +27,8 @@ select dt.initials, dt.document_name, ct.document_number, ct.name, ct.last_name,
 --Consulta para saber la información de los clientes que han pagado con Tarjeta de Crédito
 select c.initials, c.document_number, c.name, c.last_name, p.bill_date, p.method_payment, p.status
     from payment p
-        inner join client c on p.document_number = c.document_number and p.initials = c.initials
+		inner join order_ o on p.order_number = o.order_number
+        inner join client c on o.document_number = c.document_number and o.initials = c.initials
 	WHERE p.method_payment = 'Tarjeta de Crédito' and p.status = 'Completo'
 	ORDER BY p.bill_date desc
 ;
@@ -35,7 +36,7 @@ select c.initials, c.document_number, c.name, c.last_name, p.bill_date, p.method
 --Consulta para ver los detalles de pedidos cancelados
 select c.initials, c.document_number, c.name, c.last_name, p.name, od.total_value, od.color, od.amount,  o.order_date, o.status
     from order_ o
-        inner join order_details od on o.code_order_details = od.code
+        inner join order_details od on od.order_number = o.order_number
         inner join client c on o.document_number = c.document_number and o.initials = c.initials
 		inner join product p on od.reference = p.reference
 	WHERE o.status = 'Cancelado'
@@ -44,7 +45,7 @@ select c.initials, c.document_number, c.name, c.last_name, p.name, od.total_valu
 --Consultar productos vendidos
 select p.reference, p.name, p.price, od.color, p.status, p.stock 
     from order_ o 
-        inner join order_details od on o.code_order_details = od.code
+        inner join order_details od on od.order_number = o.order_number
 		inner join product p on od.reference = p.reference
     WHERE o.status = 'Completado'
 ;
@@ -59,7 +60,7 @@ select c.initials, c.document_number, c.name, c.last_name, u.email, u.phone_numb
 --Consultar todos los celulares a la venta
 select p.reference, p.name, p.price, p.stock, p.status
 	from product p
-		inner join product_category pc on p.category_name= pc.category_name
+		inner join product_category pc on p.category_name = pc.category_name
 	WHERE pc.category_name = 'Celulares'
 ;
 
@@ -73,7 +74,8 @@ select s.status, s.shipping_company_name, c.name, c.last_name, s.town, s.address
 
 --Consultar información de los usuarios que han realizado alguna compra
 select c.initials, c.document_number, c.name, c.last_name, c.login
-	from payment p 
-		inner join client c on p.document_number = c.document_number and p.initials = c.initials
+	from payment p
+		inner join order_ o on p.order_number = o.order_number
+		inner join client c on o.document_number = c.document_number and o.initials = c.initials
 	WHERE p.status = 'Completo'
 ;

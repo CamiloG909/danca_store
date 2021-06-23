@@ -28,7 +28,8 @@ select dt.initials, dt.document_name, ct.document_number, ct.name, ct.last_name,
 select dt.initials, c.document_number, c.name, c.last_name, p.bill_date, mp.method_payment, p.status
     from payment p
         inner join method_payment mp on p.id_method_payment = mp.id
-        inner join client c on p.id_client = c.id
+		inner join order_ o on p.id_order = o.id
+        inner join client c on o.id_client = c.id
         inner join document_type dt on c.id_document_type = dt.id
 	WHERE mp.method_payment = 'Tarjeta de Crédito' and p.status = 'Completo'
 	ORDER BY p.bill_date desc
@@ -36,8 +37,8 @@ select dt.initials, c.document_number, c.name, c.last_name, p.bill_date, mp.meth
 
 --Consulta para ver los detalles de pedidos cancelados
 select dt.initials, c.document_number, c.name, c.last_name, p.name, od.total_value, od.color, od.amount,  o.order_date, o.status
-    from order_ o
-        inner join order_details od on o.id_order_details = od.id
+    from order_details od
+        inner join order_ o on od.id_order = o.id
         inner join client c on o.id_client = c.id
         inner join document_type dt on c.id_document_type = dt.id
 		inner join product p on od.id_product = p.id
@@ -47,7 +48,7 @@ select dt.initials, c.document_number, c.name, c.last_name, p.name, od.total_val
 --Consultar productos vendidos
 select p.reference, p.name, p.price, od.color, p.status, p.stock 
     from order_ o 
-        inner join order_details od on o.id_order_details = od.id
+        inner join order_details od on od.id_order = o.id
 		inner join product p on od.id_product = p.id
     WHERE o.status = 'Completado'
 ;
@@ -77,8 +78,9 @@ select s.status, s.shipping_company_name, c.name, c.last_name, s.town, s.address
 
 --Consultar información de los usuarios que han realizado alguna compra
 select dt.initials, c.document_number, c.name, c.last_name, u.email
-	from payment p 
-		inner join client c on p.id_client = c.id
+	from payment p
+		inner join order_ o on p.id_order = o.id
+		inner join client c on o.id_client = c.id
 		inner join user_ u on c.id_user = u.id
 		inner join document_type dt on c.id_document_type = dt.id
 	WHERE p.status = 'Completo'
