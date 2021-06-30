@@ -9,7 +9,6 @@ INSERT INTO rol VALUES
 --document_type
 INSERT INTO document_type VALUES 
     ('CC','Cédula de Ciudadanía','Activo'),
-    ('TI','Tarjeta de Identidad','Activo'),
     ('CE','Cédula de Extranjería','Activo')
 ;
 
@@ -59,8 +58,8 @@ INSERT INTO client VALUES
     ('101291319','Luis Felipe','Delgado Barrón','CC','feliram74-89@gmail.com'),
     ('95752599','Hansel Andres','Espejo Ramos','CC','hansel-845@gmail.com'),
     ('65101974','Aniyensy Sarai','Flores Aguilar','CC','aniyensysarai_flores@gmail.com'),
-    ('346355327','Karla Paulette','García Arreguín','CE','karlapual212@gmail.com'),
-    ('87546982','Daniel','Smith Osorio','CE','darksusp21@gmail.com')
+    ('346355327','Karla Paulette','García Arreguín','CC','karlapual212@gmail.com'),
+    ('87546982','Daniel','Smith Osorio','CC','darksusp21@gmail.com')
 ;
 
 --supplier
