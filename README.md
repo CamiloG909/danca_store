@@ -1,4 +1,4 @@
-<p align="center"><img src="https://imgur.com/7WA835U"></p>
+<p align="center"><img src="https://i.imgur.com/WV9W1sb.jpg"></p>
 <h3 align="center">Tienda online para comprar celulares y computadores de forma rápida y segura.</h3>
 <p align="center"> <img src="https://i.imgur.com/gvqg1EY.png" width="50%"/></p>
 <h3 align="center">Integrantes</h3>
