@@ -103,12 +103,12 @@ INSERT INTO product (reference,name,price,picture,specs,information,color,stock,
 
 --order_
 INSERT INTO order_ (document_number,initials,order_date,status) VALUES
-    ('10130960','CC','2021-01-08 10:35:00','Completado'),
-    ('65717987','CC','2021-02-15 17:06:00','Completado'),
-    ('98456256','CC','2021-02-20 12:11:00','Completado'),
-    ('101233843','CC','2021-03-27 08:10:00','Completado'),
-    ('91263812','CC','2021-04-12 13:02:00','Completado'),
-    ('95752599','CC','2021-05-04 17:00:00','Cancelado')
+    ('10130960','CC','2021/01/08','Completado'),
+    ('65717987','CC','2/21/02etado'),
+    ('98456256','CC','2021/02/20','Completado'),
+    ('101233843','CC','2021/03/27','Completado'),
+    ('91263812','CC','2021/04/12','Completado'),
+    ('95752599','CC','2021/05/04','Cancelado')
 ;
 
 --order_details
@@ -140,9 +140,9 @@ INSERT INTO payment (method_payment,order_number,bill_date,status) VALUES
 
 --shipping
 INSERT INTO shipping (order_number,shipping_company_name,town,address,shipping_date,delivery_date,status) VALUES
-    ('1','Servientrega','Bogotá','Cll 8 A Bis #94 - 23','2021-01-08 04:40:00','2021-01-10 09:15:00','Entregado'),
-    ('2','Servientrega','Mosquera, Cundinamarca','Cra. 3 #No. 15 A - 57','2021-02-15 19:00:00','2021-02-17 12:43:00','Entregado'),
-    ('3','Servientrega','Bogotá','Cll. 13 #65-21','2021-02-20 03:30:00','2021-02-21 17:21:00','Entregado'),
-    ('4','TCC','Leticia, Amazonas','Cll 9 # 9 – 62','2021-03-27 08:10:00','2021-04-01 17:30:00','Entregado'),
-    ('5','Servientrega','Cauca, Popayán','Cll 4 norte # 10B-66','2021-04-12 13:02:00','2021-04-16 09:15:00','Entregado')
+    ('1','Servientrega','Bogotá','Cll 8 A Bis #94 - 23','2021/01/08','2021/01/10','Entregado'),
+    ('2','Servientrega','Mosquera, Cundinamarca','Cra. 3 #No. 15 A - 57','2021/02/15','2021/02/17','Entregado'),
+    ('3','Servientrega','Bogotá','Cll. 13 #65-21','2021/02/20','2021/02/21','Entregado'),
+    ('4','TCC','Leticia, Amazonas','Cll 9 # 9 – 62','2021/03/27','2021/04/01','Entregado'),
+    ('5','Servientrega','Cauca, Popayán','Cll 4 norte # 10B-66','2021/04/12','2021/04/16','Entregado')
 ;
