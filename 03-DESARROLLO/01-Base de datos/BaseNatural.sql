@@ -15,6 +15,7 @@ CREATE TABLE user_ (
     town VARCHAR(100)NOT NULL,
     address VARCHAR(90)NOT NULL,
     image_url VARCHAR,
+    image_id VARCHAR,
     status VARCHAR(100)NOT NULL,
 	CONSTRAINT pk_user PRIMARY KEY (login),
     CONSTRAINT uk_user UNIQUE (email)
@@ -68,6 +69,7 @@ CREATE TABLE product (
     name VARCHAR(40)NOT NULL,
     price numeric(19,0)NOT NULL,
     picture VARCHAR NOT NULL,
+    picture_id VARCHAR NOT NULL,
 	specs VARCHAR NOT NULL,
     information VARCHAR NOT NULL,
     color VARCHAR(150),
